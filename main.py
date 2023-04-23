@@ -34,18 +34,17 @@ with open('insert.sql', 'w') as f:
     f.write(sql)
 """
 
-"""
+
 for i in range(0, 1000):
-    sql += "INSERT INTO \"Apps\" (\"AppName\", \"AppVersion\", \"AppDescription\", \"AppSize\", \"AppPrice\") VALUES "
+    sql += "INSERT INTO \"Apps\" (\"AppName\", \"AppVersion\", \"AppDescription\", \"AppSize\", \"AppPrice\", \"AppRating\") VALUES "
     for j in range(0, 1000):
-        sql += "('{}', '{}', '{}', {}, {}),".format(fake.word(), fake.md5(), fake.bs(), fake.pyint(1, 100000), fake.pydecimal(left_digits=2, right_digits=2, positive=True, min_value=1, max_value=100))
+        sql += "('{}', '{}', '{}', {}, {}, {}),".format(fake.word(), fake.md5(), fake.bs(), fake.pyint(1, 100000), fake.pydecimal(left_digits=2, right_digits=2, positive=True, min_value=1, max_value=100), fake.pyint(1,5))
     sql = sql[:-1]
     sql += ";\n"
 
 # write SQL statement to file
 with open('insertapps.sql', 'w') as f:
     f.write(sql)
-"""
 
 """
 for i in range(0, 1000):
@@ -60,6 +59,7 @@ with open('insertgames.sql', 'w') as f:
     f.write(sql)
 """
 
+"""
 list_of_keys = rand_pairs(1000000, 10000000)
 k = 0
 
@@ -81,3 +81,4 @@ for i in range(0, 10000):
 # write SQL statement to file
 with open('insertdev.sql', 'w') as f:
     f.write(sql)
+"""
